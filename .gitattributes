@@ -1,4 +1,12 @@
-# Auto detect text files and perform LF normalization
 *.py linguist-language=Python
 *.sql linguist-language=SQL
 README.md linguist-documentation=true
+
+# Ignore vendor directories
+vendor/* linguist-vendored
+
+# Ignore documentation
+docs/* linguist-documentation
+
+# Mark generated HTML files as generated
+*.html linguist-generated=true
