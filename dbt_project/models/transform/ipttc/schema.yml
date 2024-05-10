@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: ipttc
+    database: raw
+    schema: ipttc
+    tables:
+      - name: _python_raw_competitions
+      - name: _python_raw_event_info
+      - name: _python_raw_results
+      - name: _python_profile_page_count
+      - name: _python_raw_profile_short
+      - name: _python_raw_profile_extended
+      - name: _python_raw_ranking_info
+      - name: _python_raw_rankings
+
+
+# models:
+#   - name: t_match_by_entrant_w_details
+#     columns:
+#       - name: entrant_match_id
+#         tests:
+#           - unique
+#           - not_null
+#   - name: t_entrant_standing_w_details
+#     tests:
+#       - dbt_utils.unique_combination_of_columns:
+#           combination_of_columns:
+#             - event_id
+#             - event_category_id
+#             - group_name
+#             - position
+#   - name: t_entrant_standing_w_details_w_vs_records
+#     tests:
+#       - dbt_utils.unique_combination_of_columns:
+#           combination_of_columns:
+#             - event_id
+#             - event_category_id
+#             - group_name
+#             - position
+ 

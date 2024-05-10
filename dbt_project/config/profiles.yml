@@ -1,0 +1,30 @@
+config:
+  send_anonymous_usage_stats: False
+  use_colors: True
+  
+ipttc:
+  outputs:
+    dev:
+      type: snowflake
+      database: dev_db
+      schema: unused
+      threads: 1
+      role: "{{ env_var('SNOWFLAKE_ROLE')}}"
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT')}}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE')}}"
+      user: "{{ env_var('SNOWFLAKE_USER')}}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD')}}"
+      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR', '')}}"
+
+    prod:
+      type: snowflake
+      database: unused
+      schema: unused
+      threads: 1
+      role: "{{ env_var('SNOWFLAKE_ROLE')}}"
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT')}}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE')}}"
+      user: "{{ env_var('SNOWFLAKE_USER')}}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD')}}"
+      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR', '')}}"
+  target: dev

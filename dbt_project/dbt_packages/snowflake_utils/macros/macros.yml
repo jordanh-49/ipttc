@@ -1,0 +1,31 @@
+version: 2
+
+macros:
+  - name: clone_schema
+    description: '{{ doc("clone_schema") }}'
+    arguments:
+      - name: source_schema
+        description: Source schema name
+      - name: destination_schema
+        description: Destination schema name
+      - name: source_database
+        description: Source database name (optional). Defaults to target database.
+      - name: destination_database
+        description: Destination database (optional). Defaults to target database.
+        
+  - name: drop_schema
+    description: '{{ doc("drop_schema") }}'
+    arguments:
+      - name: schema_name
+        description: Schema to drop
+      - name: database
+        description: Database name (optional). Defaults to target database.
+        
+  - name: warehouse_size
+    description: '{{ doc("warehouse_size") }}'
+
+  - name: apply_meta_as_tags
+    description: '{{ doc("apply_meta_as_tags") }}'
+    arguments:
+      - name: results
+        description: The on-run-end context object
