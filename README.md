@@ -25,21 +25,19 @@
 
 ### Styling Guide
 
+- `r_` - DBT raw models
+- `t_` - DBT transform models
+- `_python_raw_` - Dagster raw asset
 
 ### Asset Graph
-
 ![Asset Graph](assets/images/Job_all_assets.svg)
 
-### Assets for Extraction
-
-
-### dbt Models for Transformation
-
-
 ### dbt Models for Production
-- model_name_1: This model aggregates data X and Y to support Z analysis.
-- model_name_2: This model filters and summarizes data A for reporting purposes.
-
+- `player_profiles`: This model produces a tbl with complete player profiles inc. impairment and demographic details.
+- `match_info`: This model produces a tbl with all the relevant match details inc. phase, time, location, set scores and members.
+- `match_by_player_by_set_wide`: This model produces a tbl with all the match info + a column for each set result and outcome by player by team.
+- `match_by_team_by_set_long`: This model produces a tbl with all the match info and results by team by set.
+- `match_by_team_by_set_wide`: This model produces a tbl with all the match info + a column for each set result and outcome by team.
 
 
 ## Getting Started
@@ -95,15 +93,10 @@ DBT_TARGET="dev"
 
 ### Running the Pipeline locally
 
-To run the application, execute the following steps:
-
-1. **Usage**:
-   
-   Run the scraper using the following command:
-
-   ```bash
-   python scraper.py
-   ```
+To launch the Dagster control panel, execute the following command in the console:
+ ```bash
+dagster dev
+ ```
 
 ## License
 
