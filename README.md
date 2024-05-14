@@ -23,13 +23,23 @@
 
 ## Dagster Assets and dbt Models
 
+### Styling Guide
+
+
 ### Asset Graph
 
 ![Asset Graph](assets/images/Job_all_assets.svg)
 
-### dbt Models in Production
+### Assets for Extraction
+
+
+### dbt Models for Transformation
+
+
+### dbt Models for Production
 - model_name_1: This model aggregates data X and Y to support Z analysis.
 - model_name_2: This model filters and summarizes data A for reporting purposes.
+
 
 
 ## Getting Started
