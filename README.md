@@ -93,10 +93,11 @@ DBT_TARGET="dev"
 
 ### Running the Pipeline locally
 
-To launch the Dagster control panel, execute the following command in the console:
+1. To launch the Dagster control panel, execute the following command in the console:
  ```bash
 dagster dev
  ```
+2. To access the control panel, navigate to **http://localhost:3000** in your web browser (default port)
 
 ## License
 
@@ -104,4 +105,5 @@ Distributed under the MIT License. See [LICENSE](https://github.com/jordanh-49/p
 
 ## Acknowledgements
 
-* [IPTTC Website & API]([https://www.ipttc.org/])
+* [IPTTC Website](https://www.ipttc.org/)
+
