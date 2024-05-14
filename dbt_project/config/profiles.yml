@@ -6,7 +6,7 @@ ipttc:
   outputs:
     dev:
       type: snowflake
-      database: dev_db
+      database: unused
       schema: unused
       threads: 1
       role: "{{ env_var('SNOWFLAKE_ROLE')}}"
