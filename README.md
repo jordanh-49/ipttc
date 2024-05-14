@@ -2,8 +2,8 @@
 <p align="center">
   <h3 align="center">Para Table-Tennis Pipeline</h3>
 
-  <p align="center">
-    A data pipeline using Dagster for orchestration, Python for extraction, DBT for transformations and Snowflake for data warehousing for all match results and player profiles from the IPTTC official website.
+  <p align="left">
+    This repository hosts the Para Table-Tennis Pipeline, leveraging Dagster for orchestration, Python for extraction, dbt Core for data transformations, and Snowflake as the data warehousing solution procesing match results and player profiles data from the IPTTC website.
     <br/>
     <br/>
   </p>
@@ -15,38 +15,64 @@
   <img src="https://img.shields.io/github/license/jordanh-49/ipttc">
 </p>
 
+## Tech Stack
+- **Dagster**: Orchestrates workflows and manages dependencies between tasks.
+- **Python**: Extracts data from sources.
+- **dbt Core**: Transforms data within Snowflake, preparing it for analytics.
+- **Snowflake**: Serves as the scalable cloud data warehouse.
+
 ## Getting Started
+
 ### Prerequisites
+- Python 3.10 or higher
+- Snowflake account
+- dbt Core installed locally
 
-Ensure you have Python version >=3.10 installed on your machine.
+### Setup
 
-### Installation
+#### 1. Clone the Repository
 
-To set up the application locally, follow these steps:
+Clone this repository to your local machine to get started:
 
-1. **Clone the Repository**:
-   
-   Clone the project repository from GitHub to your local machine using the following command:
+```bash
+git clone https://github.com/jordanh-49/ipttc.git
+cd template
+```
 
-   ```bash
-   git clone https://github.com/jordanh-49/sportspeople-scraper/.git
-   ```
-3. **Navigate to the Project Directory**:
+#### 2. Install PDM
+PDM (Python Development Master) is used for managing project dependencies.
+Install PDM if you haven't already:
 
-   Change to the project directory with:
+```bash
+pip install pdm
+```
 
-   ```bash
-   cd sportspeople-scraper
-   ```
-5. **Install Dependencies**:
-   
-   Install the necessary Python packages defined in the `requirements.txt` file:
+#### 3. Create a Virtual Environment and Install Dependencies
+Use PDM to create a new virtual environment for this project and install the required libraries/dependencies defined in pyproject.toml (follow prompts in console):
+```bash
+pdm install
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+#### 4. Activate Virtual environment
+Activate the virtual environment with the following command:
+```bash
+source .venv/bin/activate
+```
 
-### Running the Application
+#### 5. Set Env variables
+Create a `.env` file using the `env.sample` as reference (use personal Snowflake account for local dev)
+```
+SNOWFLAKE_ACCOUNT="xy12345.ap-southeast-2"
+SNOWFLAKE_USER="<service_account_user>"
+SNOWFLAKE_PASSWORD="<service_account_password>"
+SNOWFLAKE_WAREHOUSE="your_default_wh"
+SNOWFLAKE_AUTHENTICATOR="<optional_authenticator>"
+SNOWFLAKE_ROLE="<your_role>"
+DBT_PROFILE_DIR="dbt_project/config/profiles.yml"
+DBT_TARGET=dev
+```
+
+### Running the Pipeline locally
 
 To run the application, execute the following steps:
 
@@ -57,11 +83,20 @@ To run the application, execute the following steps:
    ```bash
    python scraper.py
    ```
-   
+
+## dbt Models in Production
+
+### Model Descriptions
+
+Here, you would list and describe the dbt models that are currently in production, detailing what each model represents and contains. For example:
+
+- model_name_1: This model aggregates data X and Y to support Z analysis.
+- model_name_2: This model filters and summarizes data A for reporting purposes.
+
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/jordanh-49/portfolio/blob/main/LICENSE.md) for more information.
 
 ## Acknowledgements
 
-* [Sportspeople Jobs](https://www.sportspeople.com.au/)
+* [IPTTC Website & API]([https://www.ipttc.org/])
