@@ -14,7 +14,7 @@ ipttc:
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE')}}"
       user: "{{ env_var('SNOWFLAKE_USER')}}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD')}}"
-      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR', '')}}"
+      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR')}}"
 
     prod:
       type: snowflake
@@ -26,5 +26,5 @@ ipttc:
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE')}}"
       user: "{{ env_var('SNOWFLAKE_USER')}}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD')}}"
-      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR', '')}}"
+      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR')}}"
   target: dev
