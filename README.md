@@ -21,6 +21,17 @@
 - **dbt Core**: Transforms data within Snowflake, preparing it for analytics.
 - **Snowflake**: Serves as the scalable cloud data warehouse.
 
+## Dagster Assets and dbt Models
+
+### Asset Graph
+
+![Asset Graph](assets/images/Job_all_assets.svg)
+
+### dbt Models in Production
+- model_name_1: This model aggregates data X and Y to support Z analysis.
+- model_name_2: This model filters and summarizes data A for reporting purposes.
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -69,7 +80,7 @@ SNOWFLAKE_WAREHOUSE="your_default_wh"
 SNOWFLAKE_AUTHENTICATOR="<optional_authenticator>"
 SNOWFLAKE_ROLE="<your_role>"
 DBT_PROFILE_DIR="dbt_project/config/profiles.yml"
-DBT_TARGET=dev
+DBT_TARGET="dev"
 ```
 
 ### Running the Pipeline locally
@@ -83,15 +94,6 @@ To run the application, execute the following steps:
    ```bash
    python scraper.py
    ```
-
-## dbt Models in Production
-
-### Model Descriptions
-
-Here, you would list and describe the dbt models that are currently in production, detailing what each model represents and contains. For example:
-
-- model_name_1: This model aggregates data X and Y to support Z analysis.
-- model_name_2: This model filters and summarizes data A for reporting purposes.
 
 ## License
 
